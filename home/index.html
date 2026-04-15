@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- 基础信息 -->
+    <meta charset="utf-8">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="force-rendering" content="webkit"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#424242"/>
+    <meta name="description" content="一个默默无闻的主页">
+    <meta name="keywords" content="郭睿的个人主页">
+    <meta name="author" content="郭睿">
+    <title>BarneyのWebsite</title>
+
+    <style>
+        @font-face {
+            font-family: 'Pacifico';
+            src: url('./font/Pacifico-Regular.ttf') format('truetype');
+        }
+
+        *:not(.fa-solid,.fa-brands) {
+            font-family: 'Pacifico', sans-serif !important;
+        }
+    </style>
+
+    <!-- jQuery - with fallback CDN -->
+    <script src="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-y/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        // Fallback to another CDN if jQuery fails to load
+        if (typeof jQuery === 'undefined') {
+            var script = document.createElement('script');
+            script.src = 'https://code.jquery.com/jquery-3.5.1.min.js';
+            script.onerror = function() {
+                console.error('Both jQuery CDNs failed to load');
+            };
+            document.head.appendChild(script);
+        }
+    </script>
+
+    <!-- HarmonyOS Sans -->
+    <!-- https://s1.hdslb.com/bfs/static/jinkela/long/font/regular.css -->
+    <link rel="stylesheet" href="https://s1.hdslb.com/bfs/static/jinkela/long/font/regular.css"/>
+   
+    <!-- 引入样式 -->
+    <link rel="stylesheet" type="text/css"
+          href="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-y/bootstrap/5.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <link rel="stylesheet" type="text/css" href="./css/mobile.css">
+    <link rel="stylesheet" type="text/css" href="./css/loading.css">
+    <link rel="stylesheet" type="text/css" href="./css/animation.css">
+    <link rel="icon" href="./img/icon/favicon.ico">
+    <link rel="apple-touch-icon" href="./img/icon/apple-touch-icon.png">
+    
+    <!-- Izitoast -->
+    <link rel="stylesheet" href="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-y/izitoast/1.4.0/css/iziToast.min.css">
+    <script type="text/javascript"
+            src="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-y/izitoast/1.4.0/js/iziToast.min.js">
+    </script>
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+   
+    <!-- Aplayer (optional - not critical for page load) -->
+    <link rel="stylesheet" href="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-y/aplayer/1.10.1/APlayer.min.css"
+          crossorigin="anonymous" referrerpolicy="no-referrer" onerror="console.warn('APlayer CSS failed to load')"/>
+    <script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-y/aplayer/1.10.1/APlayer.min.js" crossorigin="anonymous"
+            referrerpolicy="no-referrer" onerror="console.warn('APlayer JS failed to load')"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2WVH35V11W"></script>
+
+    <!-- <script src="./js/Meting.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+    <!-- IE Out -->
+    <script>
+        if ( /*@cc_on!@*/ false || (!!window.MSInputMethodContext && !!document.documentMode)) window.location.href =
+            "/upgrade-your-browser/index.html?referrer=" + encodeURIComponent(window.location.href);
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-2WVH35V11W');
+    </script>
+    <!-- PWA -->
+
+    <link rel="manifest" href="./manifest.json">
+
+    <!-- 51.LA 统计 -->
+    <script src="./js/51LA.js"></script>
+</head>
+
+<body>
+<!--加载动画-->
+<div id="loading-box">
+    <div class="loading-left-bg"></div>
+    <div class="loading-right-bg"></div>
+    <div class="spinner-box">
+        <div class="loader">
+            <div class="inner one"></div>
+            <div class="inner two"></div>
+            <div class="inner three"></div>
+        </div>
+        <div class="loading-word">
+            <p class="loading-title" id="loading-title">Barney の Website</p>
+            <span id="loading-text">loading</span>
+        </div>
+    </div>
+</div>
+
+<section id="section" class="section">
+
+    <!-- 背景图片 -->
+    <div class="bg-all">
+        <img id="bg" onerror="this.classList.add('error');">
+        <div class="cover"></div>
+    </div>
+
+    <!-- 鼠标指针 -->
+    <div id="g-pointer-1"></div>
+    <div id="g-pointer-2"></div>
+
+    <!-- 主体内容 -->
+    <main id="main" class="main">
+        <div class="container" id="container">
+            <div class="row" id="row">
+                <div class="col left">
+
+                    <!--基本信息-->
+                    <div class="main-left">
+
+                        <!--Logo-->
+                        <div class="main-img">
+                            <img id="logo-img" src="./img/icon/image_01.PNG" alt="img"> <!-- 这一行是图片 -->
+                            <div class="img-title">
+                                <span class="img-title-big" id="logo-text-1">Barney</span> <!-- 这一行字 -->
+                                <!-- <span class="img-text" id="logo-text-2">.top</span>  -->
+                            </div>
+                        </div>
+                        <!--介绍信息-->
+                        <div class="message cards" id="switchmore">
+                            <div class="des" id="des">
+                                <i class="fa-solid fa-quote-left"></i>
+                                <div class="des-title"><span id="change">Hello World ! 👋 </span><br/><span
+                                        id="change1">A station established in the 21st century. As you might know, Barney’s parents hope he can be low-key, mature, and responsible, but Barney himself only cares about whether he is funny enough.</span></div>
+                                <i class="fa-solid fa-quote-right"></i>
+                            </div>
+                        </div>
+                        <!-- Social Links -->
+                        <div class="social" id="social">
+                            <a href="https://www.linkedin.com/in/barney-guo-834a4829a/" class="link" id="linkedin" target="_blank">
+                                <i class="fa-brands fa-linkedin"></i>
+                            </a>
+                            <a href="https://github.com/brguo55" class="link" id="github" target="_blank">
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+                            <a href="mailto:brguo55@gmail.com" class="link" id="email">
+                                <i class="fa-solid fa-envelope"></i>
+                            </a>
+                            <a href="https://www.instagram.com/rguo55/" class="link" id="instagram" target="_blank">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                            <a href="https://space.bilibili.com/495003013" class="link" id="bilibili" target="_blank">
+                                <i class="fa-brands fa-bilibili"></i>
+                            </a>
+                            <a href="https://www.douban.com/people/178193143/?_i=6326162uzJEJMI,8727710uzJEJMI" class="link" id="douban" target="_blank">
+                                <img src="./img/icon/douban.png" alt="Douban Icon" width="21" height="21" style="margin: 2px 12px; filter: brightness(5) invert(1); margin-left: 8px; margin-bottom: 5px;">
+                            </a>
+
+                            <span id="link-text">Contact Me here</span>
+                        </div>
+                    </div>
+                </div>
+                <!--第二屏 Logo-->
+                <div class="logo cards" style="display: none" id="changemore">
+                    <a class="logo-text" id="logo-text-small">Barney Guo</a>
+                </div>
+                <div class="col right">
+                    <div class="main-right">
+                        <!--功能区-->
+                        <div class="row rightone" id="rightone">
+                            <div class="col hitokotos">
+                                <!--一言-->
+                                <div class="hitokoto cards" id="hitokoto">
+                                    <a class="hitokoto-all" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
+                                        <img src="./img/icon/smile.png" alt="" style="max-width: 100%;">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col times">
+                                <!--时间-->
+                                <div class="time cards" style="justify-content: center;" id="upWeather">
+                                    <div class="timeshow" id="time">
+                                        2000&nbsp;年&nbsp;0&nbsp;月&nbsp;00&nbsp;日&nbsp;<span
+                                            class="weekday">Monday</span><br><span class="time-text">00:00:00</span>
+                                    </div>
+                                    <!-- <div class="weather">
+                                        <span id="city_text">weather</span>&nbsp;
+                                        <span id="wea_text">加载失败</span>&nbsp;
+                                        <span id="tem_text"></span>
+                                        <span id="win_text">次数</span>
+                                        <span id="win_speed">超限</span>
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div>
+                        <!--分隔线-->
+                        <div class="line">
+                            <i class="fa-solid fa-link"></i>
+                            <span class="line-text">My Links 💚</span>
+                        </div>
+                        <!--网站链接-->
+                        <div class="link">
+                            <!-- 第一组 -->
+                            <div class="row">
+                                <div class="col">
+                                    <a id="link-url-1" href="https://www.linkedin.com/in/barney-guo-834a4829a/" target="_blank">
+                                        <div class="link-card cards">
+                                            <i id="link-icon-1" class="fa-solid fa-blog"></i>
+                                            <span class="link-name" id="link-name-1">About</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col 2">
+                                    <a id="link-url-2" href="info/research.html" target="_blank">
+                                        <div class="link-card cards">
+                                            <i class="fa-solid fa-cloud"></i>
+                                            <span class="link-name">Research</span>
+                                        </div>
+                                    </a>                                    
+                                </div>
+                                <div class="col">
+                                    <a id="link-url-3" href="info/project.html" target="_blank">
+                                        <div class="link-card cards">
+                                            <i id="link-icon-3" class="fa-solid fa-music"></i>
+                                            <span class="link-name" id="link-name-3">Project</span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- 第二组 -->
+                            <div class="row" style="margin-top: 1.5rem;">
+                                <div class="col">
+                                    <a id="link-url-4" href="info/accolade.html" target="_blank">
+                                        <div class="link-card cards">
+                                            <i id="link-icon-4" class="fa-solid fa-compass"></i>
+                                            <span class="link-name" id="link-name-4">Accolade</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col 2">
+                                    <a id="link-url-5" onclick="openModal()" href="javascript:void(0);">
+                                        <div class="link-card cards">
+                                            <i id="link-icon-5" class="fa-solid fa-book-bookmark"></i>
+                                            <span class="link-name" id="link-name-5">CV</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a id="link-url-6" href="info/miscellaneous.html" target="_blank">
+                                        <div class="link-card cards">
+                                            <i id="link-icon-6" class="fa-solid fa-flask"></i>
+                                            <span class="link-name" id="link-name-6">More...</span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--展开菜单按钮-->
+            <div class="menu" id="switchmenu">
+                <a class="munu-button cards" id="menu">
+                    <i class="fa-solid fa-bars"></i>
+                </a>
+            </div>
+            <!--更多内容-->
+            <div class="more" id="more">
+                <!--关闭按钮-->
+                <div class="close fixed-top" id="close">
+                    <i class="fa-solid fa-circle-xmark"></i>
+                </div>
+                <div class="line" style="margin-top: 1rem;">
+                    <i class="fa-solid fa-angle-left"></i>
+                    <span class="line-text">Time Capsule</span>
+                    <i class="fa-solid fa-angle-right"></i>
+                </div>
+                <div class="date" id="date">
+                    <div class="item" id="dayProgress">
+                        <div class="date-text" style="margin-top: 0rem;">Today has already passed&nbsp;<span></span>&nbsp;hours.
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar"></div>
+                        </div>
+                    </div>
+                    <div class="item" id="weekProgress">
+                        <div class="date-text">This week has passed&nbsp;<span></span>&nbsp;day</div>
+                        <div class="progress">
+                            <div class="progress-bar"></div>
+                        </div>
+                    </div>
+                    <div class="item" id="monthProgress">
+                        <div class="date-text">This month has passed&nbsp;<span></span>&nbsp;day</div>
+                        <div class="progress">
+                            <div class="progress-bar"></div>
+                        </div>
+                    </div>
+                    <div class="item" id="yearProgress">
+                        <div class="date-text">This year has passed&nbsp;<span></span>&nbsp;month</div>
+                        <div class="progress">
+                            <div class="progress-bar"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--更多页面-->
+            <div class="box" id="box" style="display: none">
+                <div class="box-wrapper">
+                    <!--关闭按钮-->
+                    <div class="closebox fixed-top" id="closemore">
+                        <i class="fa-solid fa-circle-xmark"></i>
+                    </div>
+                    <!--左侧内容-->
+                    <div class="box-left">
+                        <div class="img-title">
+                            <span class="img-title-big" id="logo-title-other">Bywind</span>
+                            <span class="img-text" id="logo-title-other-small">.xyz</span><br/>
+                            <span class="img-text">&nbsp;v&nbsp;1.0</span>
+                            <a href="https://github.com/haonan15" target="_blank">
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+                        </div>
+                        <!--更多内容-->
+                        <div class="accordion" id="accordion">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingOne">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#collapseOne" aria-expanded="true"
+                                            aria-controls="collapseOne">
+                                        Wallpaper Settings
+                                    </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse show"
+                                     aria-labelledby="headingOne" data-bs-parent="#accordion">
+                                    <div class="accordion-body">
+                                        <div class="set">
+                                            <div class="wallpaper" id="wallpaper">
+                                                <div class="form-radio">
+                                                    <input type="radio" class="set-wallpaper" style="display: none;"
+                                                           id="radio1" value="1" name="wallpaper-type">
+                                                    <label for="radio1">Default Wallpaper</label>
+                                                </div>
+                                                <div class="form-radio">
+                                                    <input type="radio" class="set-wallpaper" style="display: none;"
+                                                           id="radio2" value="2" name="wallpaper-type">
+                                                    <label for="radio2" id="wallpaper_text1">Daily Image</label>
+                                                </div>
+                                                <div class="form-radio">
+                                                    <input type="radio" class="set-wallpaper" style="display: none;"
+                                                           id="radio3" value="3" name="wallpaper-type">
+                                                    <label for="radio3" id="wallpaper_text2">Random Scenery</label>
+                                                </div>
+                                                <div class="form-radio">
+                                                    <input type="radio" class="set-wallpaper" style="display: none;"
+                                                           id="radio4" value="4" name="wallpaper-type">
+                                                    <label for="radio4" id="wallpaper_text3">Random Anime</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--更新日志-->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingTwo">
+                                    <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                                            aria-expanded="false" aria-controls="collapseTwo">
+                                        Log Update
+                                    </button>
+                                </h2>
+                                <div id="collapseTwo" class="accordion-collapse collapse"
+                                     aria-labelledby="headingTwo" data-bs-parent="#accordion">
+                                    <div class="accordion-body">
+                                        <div class="upnote">
+                                                <span class="uptext">
+                                                    <i class="fa-solid fa-circle-plus"></i>&nbsp;音乐歌单支持快速自定义
+                                                </span>
+                                            <span class="uptext">
+                                                    <i class="fa-solid fa-circle-plus"></i>&nbsp;壁纸支持个性化设置
+                                                </span>
+                                            <span class="uptext">
+                                                    <i class="fa-solid fa-circle-plus"></i>&nbsp;音乐播放器支持音量控制
+                                                </span>
+                                            <span class="uptext">
+                                                    <i class="fa-solid fa-screwdriver-wrench"></i>&nbsp;修复天气 API
+                                                </span>
+                                            <span class="uptext">
+                                                    <i class="fa-solid fa-screwdriver-wrench"></i>&nbsp;时光胶囊显示错误
+                                                </span>
+                                            <span class="uptext">
+                                                    <i class="fa-solid fa-screwdriver-wrench"></i>&nbsp;移动端动画及细节
+                                                </span>
+                                            <span class="uptext">
+                                                    <i class="fa-solid fa-screwdriver-wrench"></i>&nbsp;图标更换为 Font
+                                                    Awesome</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Aplayer-->
+                    <div class="box-right">
+                        <div id="aplayer">
+                            <span>Music Player Failed to Load</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+               <!-- 模态框（Modal） -->
+               <div id="passwordModal" class="modal">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <div class="modal-content">
+                  <label style="color: #333;" for="passwordInput">Password:</label>
+                  <input type="password" id="passwordInput" name="password">
+                  <div id="btn-box">
+                    <button id="passwordSubmit" onclick="verifyPassword()">Submit</button>
+                    <button id="closeSubmit" onclick="closeModal()">Cancel</button>
+                  </div>
+              
+                </div>
+              </div>
+    </main>
+    <!-- 版权信息 -->
+    <footer id="footer" class="fixed-bottom footer">
+        <div class="power">
+            <script>
+                var footer_names = ['Last Updated on 10/14/2024'];
+                document.write((footer_names[Math.floor(Math.random() * footer_names.length)]));
+            </script>
+            <!-- <span id="power">Copyright&nbsp;&copy;
+                <script>
+                    document.write((new Date()).getFullYear());
+                </script>
+                <a href="https://blog.bywind.xyz" id="power-text">Aurora</a>
+            </span>
+            <a href="https://beian.miit.gov.cn" id="beian" target="_blank">&amp;&nbsp;鄂ICP备20006685号</a> -->
+        </div>
+        <!-- 歌词显示 -->
+        <div id="lrc"></div>
+    </footer>
+</section>
+<!-- sw.js -->
+<script>
+    if ("serviceWorker" in navigator) {
+        window.addEventListener("load", function () {
+            navigator.serviceWorker.register("sw.js");
+        });
+    }
+
+    // 打开模态框的函数
+  function openModal() {
+    document.getElementById("passwordModal").style.display = "block";
+  }
+  // 关闭模态框的函数
+  function closeModal() {
+    document.getElementById("passwordModal").style.display = "none";
+  }
+  // 验证密码的函数
+  function verifyPassword() {
+    var password = document.getElementById("passwordInput").value;
+    // 这里替换为你的密码
+    var correctPassword = '8247591';
+    if (password === correctPassword) {
+      // 密码正确，跳转到目标页面
+      window.open('/1·web/resume.pdf', '_blank');
+      closeModal();
+    } else {
+      // 密码错误，提示用户
+      alert('Incorrect password. Please try again.');
+    }
+  }
+  // 监听链接点击事件，阻止默认行为 (with safety check)
+  var headerLink = document.querySelector('.header-nav-item--external a');
+  if (headerLink) {
+    headerLink.addEventListener('click', function(e) {
+      e.preventDefault();
+      openModal();
+    });
+  }
+</script>
+<!-- noscript -->
+<noscript>
+    <div class="noscript fixed-top">请开启 JavaScript</div>
+</noscript>
+<!-- JS - Load order is CRITICAL -->
+<!-- 1. Utility library first (no dependencies) -->
+<script type="text/javascript" src="./js/js.cookie.js"></script>
+
+<!-- 2. Wait for jQuery to load (with longer timeout for fallback CDN), then load custom scripts -->
+<script>
+  // Ensure jQuery is loaded before running custom scripts
+  function loadCustomScripts() {
+    var scripts = ['./js/time.js', './js/set.js', './js/main.js'];
+    scripts.forEach(function(src) {
+      var script = document.createElement('script');
+      script.type = 'text/javascript';
+      script.src = src;
+      document.body.appendChild(script);
+    });
+  }
+  
+  if (typeof jQuery === 'undefined') {
+    var jqueryCheckInterval = setInterval(function() {
+      if (typeof jQuery !== 'undefined') {
+        console.log('✓ jQuery loaded successfully');
+        clearInterval(jqueryCheckInterval);
+        setTimeout(loadCustomScripts, 100); // Small delay to ensure jQuery is ready
+      }
+    }, 50);
+    
+    // Longer timeout for fallback CDN (10 seconds)
+    setTimeout(function() {
+      clearInterval(jqueryCheckInterval);
+      if (typeof jQuery === 'undefined') {
+        console.error('⚠️ jQuery failed to load after 10 seconds, loading scripts without jQuery');
+      }
+      loadCustomScripts();
+    }, 10000);
+  } else {
+    console.log('✓ jQuery already loaded');
+    setTimeout(loadCustomScripts, 100);
+  }
+</script>
+
+<!-- 3. Bootstrap (last) -->
+<script type="text/javascript"
+        src="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-y/bootstrap/5.1.0/js/bootstrap.min.js">
+</script>
+</body>
+
+</html>

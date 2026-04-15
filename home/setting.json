@@ -1,0 +1,46 @@
+{
+    "title": "Dashboard – Barney Guo",
+    "description": "一个默默无闻的主页",
+    "keywords": "Barney,个人主页",
+    "author": "Barney",
+    "logo_img": "./img/icon/image_01.PNG",
+    "logo_text_1": "Barney Guo",
+    "logo_text_2": "'s Website",
+    "github": "brguo55",
+    "qq": "937345968",
+    "email": "brguo55@gmail.com",
+    "bilibili": "86197012",
+    "facebook": "bottom_user",
+    "link_1": [
+        "/info/index.html",
+        "fa-solid fa-blog",
+        "About"
+    ],
+    "link_2": [
+        "/info/research.html",
+        "fa-solid fa-cloud",
+        "Research"
+    ],
+    "link_3": [
+        "/info/project.html",
+        "fa-solid fa-compass",
+        "Projects"
+    ],
+    "link_4": [
+        "/info/accolade.html",
+        "fa-solid fa-book-bookmark",
+        "Accolade"
+    ],
+    "link_5": [
+        "javascript:void(0);",
+        "fa-solid fa-flask",
+        "CV"
+    ],
+    "link_6": [
+        "/info/index.html",
+        "fa-solid fa-flask",
+        "More..."
+    ]
+}
+
+
