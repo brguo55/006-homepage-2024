@@ -1,0 +1,59 @@
+  /* 在这里添加CSS样式 */
+  #passwordModal {
+    display: none; /* 默认隐藏模态框 */
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* 半透明背景 */
+    z-index: 1;
+    overflow: auto;
+    
+  }
+  #passwordModal .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 30%; /* 宽度设置为80% */
+    border-radius: 5px;
+  }
+  #passwordModal .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  /* 输入框和按钮样式 */
+  #passwordInput {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 40px;
+  }
+  #passwordSubmit {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    width: 30%;
+  }
+
+  #closeSubmit {
+    background-color: #ec7373;
+    color: white;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    width: 30%;
+  }
+  #btn-box{
+    display: flex;
+    justify-content: space-around;
+  }

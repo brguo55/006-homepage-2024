@@ -1,0 +1,131 @@
+<!DOCTYPE html><html><head>
+    <script>location.href = '/home'</script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>index</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel="stylesheet" href="/css/tailwind.css">
+            <meta charset="UTF-8">
+            <script>
+                var docCookies = {
+    getItem: function (sKey) {
+        return decodeURIComponent(document.cookie.replace(new RegExp("(?:(?:^|.*;)\\s*" + encodeURIComponent(sKey).replace(/[-.+*]/g, "\\$&") + "\\s*\\=\\s*([^;]*).*$)|^.*$"), "$1")) || null;
+    },
+    setItem: function (sKey, sValue, vEnd, sPath, sDomain, bSecure) {
+        if (!sKey || /^(?:expires|max\-age|path|domain|secure)$/i.test(sKey)) { return false; }
+        var sExpires = "";
+        if (vEnd) {
+            switch (vEnd.constructor) {
+            case Number:
+                sExpires = vEnd === Infinity ? "; expires=Fri, 31 Dec 9999 23:59:59 GMT" : "; max-age=" + vEnd;
+                break;
+            case String:
+                sExpires = "; expires=" + vEnd;
+                break;
+            case Date:
+                sExpires = "; expires=" + vEnd.toUTCString();
+                break;
+            }
+        }
+        document.cookie = encodeURIComponent(sKey) + "=" + encodeURIComponent(sValue) + sExpires + (sDomain ? "; domain=" + sDomain : "") + (sPath ? "; path=" + sPath : "") + (bSecure ? "; secure" : "");
+        return true;
+        },
+        removeItem: function (sKey, sPath, sDomain) {
+        if (!sKey || !this.hasItem(sKey)) { return false; }
+        document.cookie = encodeURIComponent(sKey) + "=; expires=Thu, 01 Jan 1970 00:00:00 GMT" + ( sDomain ? "; domain=" + sDomain : "") + ( sPath ? "; path=" + sPath : "");
+        return true;
+    },
+    hasItem: function (sKey) {
+        return (new RegExp("(?:^|;\\s*)" + encodeURIComponent(sKey).replace(/[-.+*]/g, "\\$&") + "\\s*\\=")).test(document.cookie);
+    },
+    keys: /* optional method: you can safely remove it! */ function () {
+        var aKeys = document.cookie.replace(/((?:^|\s*;)[^\=]+)(?=;|$)|^\s*|\s*(?:\=[^;]*)?(?:\1|$)/g, "").split(/\s*(?:\=[^;]*)?;\s*/);
+        for (var nIdx = 0; nIdx < aKeys.length; nIdx++) { aKeys[nIdx] = decodeURIComponent(aKeys[nIdx]); }
+        return aKeys;
+    }
+};
+                if (location.hostname === 'green9118.temp.cn3.caihongjianzhan.com') {
+                    if (!docCookies.getItem('login_name')) {
+                        location.href = 'http://green9118.cn3.caihongjianzhan.com'
+                    }
+                }
+
+                if (location.hostname === 'green9118.temp.cn3.caihongjianzhan.com') {
+                    window.addEventListener('load', () => {
+    // 统计网站加载的第三方文件
+    const thirdUrls = window.performance.getEntries()
+      .filter(item => item instanceof PerformanceResourceTiming)
+      .filter(item => {
+        // const url = new URL(item.name);
+        // 过滤不包含以下域名的请求
+        return ['data:', 'paypal.com', 'google.com/', 'bdimg.com', 'baidu.com', 'cdn.xuansiwei.com', 'googleapis.com', 'gstatic.com', window.location.hostname].every(domain => !item.name.includes(domain));
+      });
+
+      if (thirdUrls.length > 0) {
+        fetch('//cn2.caihongjianzhan.com/api/admin/md/public/mmtgabx4294/ip-search')
+          .then(res => res.json()).then(({isFind}) => {
+            if (isFind) {
+                let newDiv = document.createElement('div');
+                newDiv.innerHTML = `
+                    <div id="jiaogeiwo_analysis" style="padding: 16px; background-color: rgb(254 252 232); border-radius: 6px;">
+                      <div style="display: flex;">
+                        <div style="flex-shrink: 0;">
+                          <svg style="width: 20px; height: 20px; color: rgb(250 204 21)" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M8.485 2.495c.673-1.167 2.357-1.167 3.03 0l6.28 10.875c.673 1.167-.17 2.625-1.516 2.625H3.72c-1.347 0-2.189-1.458-1.515-2.625L8.485 2.495zM10 5a.75.75 0 01.75.75v3.5a.75.75 0 01-1.5 0v-3.5A.75.75 0 0110 5zm0 9a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" />
+                          </svg>
+                        </div>
+                        <div style="margin-left: 12px;">
+                          <h3 style="font-size: 14px; line-height: 20px; font-weight: 500; color: rgb(133 77 14);">网站上的第三方链接</h3>
+                          <div style="margin-top: 8px; font-size: 14px; line-height: 20px; color: rgb(161 98 7);">
+                            <ul style="padding-left: 20px; word-break: break-all; list-style-type: disc;">
+                              ${thirdUrls.map(item => {
+                                return `<li>${item.name}<span style="font-weight: 700;">(${item.duration.toFixed(0)}ms)</span></li>`
+                              }).join("\n")}
+                            </ul>
+                          </div>
+                        </div>
+                        <div style="margin-left: auto; padding-left: 12px;">
+                          <div style="margin-left: -6px; margin-right: -6px; margin-top: -6px; margin-bottom: -6px;">
+                            <button onclick="jiaogeiwo_analysis.remove()" type="button" style="display: inline-flex; border-radius: 6px;background-color: rgb(254 252 232); padding: 6px; color: rgb(234 179 8);">
+                              <svg style="height: 20px; width: 20px;" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                <path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z" />
+                              </svg>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                `;
+                document.body.appendChild(newDiv);
+            }
+          })
+      }
+  });
+                }
+            </script>
+        </head>
+
+<body x-data="{}">
+    <!-- <div class="max-w-xl mx-auto overflow-hidden px-4 sm:px-0 py-8 sm:py-12">
+        <ul role="list" class="divide-y divide-gray-200">
+            <li class="py-4">
+                <a target="_blank" href="/1·web/">1·web</a>
+            </li>
+            <li class="py-4">
+                <a target="_blank" href="/home">home</a>
+            </li>
+        </ul>
+    </div> -->
+
+
+
+
+                <script>
+                    if (location.hostname !== 'green9118.temp.cn3.caihongjianzhan.com') {
+                        !function(p){"use strict";!function(t){var s=window,e=document,i=p,c="".concat("https:"===e.location.protocol?"https://":"http://","sdk.51.la/js-sdk-pro.min.js"),n=e.createElement("script"),r=e.getElementsByTagName("script")[0];n.type="text/javascript",n.setAttribute("charset","UTF-8"),n.async=!0,n.src=c,n.id="LA_COLLECT",i.d=n;var o=function(){s.LA.ids.push(i)};s.LA?s.LA.ids&&o():(s.LA=p,s.LA.ids=[],o()),r.parentNode.insertBefore(n,r)}()}({id:"JzJ5Oey3aO0Nixhe",ck:"JzJ5Oey3aO0Nixhe"});
+                    }
+                </script>
+            </body></html>
